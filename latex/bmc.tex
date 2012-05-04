@@ -1,0 +1,36 @@
+\documentclass[12pt,openany]{book}
+\usepackage{bmcstyle}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%% 标题页 %%%%%%%%%%%%%%%
+\include{titlepage}
+% \frontmatter
+%%%%%%%%%%%%%%%%%%%%%% 声明 %%%%%%%%%%%%%%%%%
+\pagestyle{empty}
+\include{announce} %% 声明
+
+%%%%%%%%%%%%%%%%%%%%% 摘要 %%%%%%%%%%%%%%%%%
+\chapter*{摘\quad 要}
+\thispagestyle{empty}
+摘要内容
+
+%%%%%%%%%%%%%%%%%%%%%% 目录 %%%%%%%%%%%%%%%%%
+\frontmatter
+\thispagestyle{plain}
+\pagenumbering{Roman}
+\tableofcontents
+
+
+%%%%%%%%%%%%%%%%%%%%% 正文 %%%%%%%%%%%%%%%%%%
+\mainmatter
+\pagestyle{fancy}
+\pagenumbering{arabic}
+\include{main}  %% 正文
+\include{reference} %% 参考文献
+\include{thanks} %% 致谢
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
