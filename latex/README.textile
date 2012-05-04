@@ -1,4 +1,6 @@
 <h1>说明</h1>
 p. 点击 右上角 Downloads 下载，解压。
+
 p. *bmc.tex* 给出了一个示例，供参考
-p. 需要使用 *xelatex* 命令编译
+
+p. 需要使用 *xelatex* 命令编译 
