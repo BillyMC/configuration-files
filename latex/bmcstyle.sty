@@ -23,6 +23,7 @@
 \usepackage{longtable} %% 长表格
 \usepackage{listings} %% 源代码
 \usepackage{xcolor}  %% 颜色
+\usepackage{paralist} %% 列表
 %% \usepackage[super]{cite} %% 参考文献
 
 %%%% 版面设计
@@ -49,8 +50,9 @@
 \titleformat{\chapter}{\centering\bf\zihao{3}\heiti}{第\chinese{chapter}章}{1em}{}
 \titlespacing*{\chapter}{0em}{-24pt}{2em}[0pt]
 \titleformat{\section}{\bf\zihao{4}\heiti}{\thesection}{1em}{}
+\titlespacing*{\section}{0em}{1em}{0em}[0pt]
 \titleformat{\subsection}{\bf\zihao{-4}\heiti}{\thesubsection}{1em}{}
-\titlespacing*{\subsection}{2em}{0em}{0em}[0pt]
+\titlespacing*{\subsection}{2em}{1em}{0em}[0pt]
 \titleformat{\subsubsection}{\bf\zihao{-4}\heiti}{\thesubsection}{1em}{}
 \titlespacing*{\subsubsection}{2em}{0em}{0em}[0pt]
 %%%% 目录设置
@@ -110,6 +112,9 @@
 \captionsetup[equation]{font=kai}
 \renewcommand{\theequation}
 {\arabic{chapter}-\arabic{equation}}
+
+%%%%%%%%%%%%%%%%%%%%%%% 列表 %%%%%%%%%%%%%%%%%%%%%%%
+% \setlength{\itemsep}{0pt}
 
 %%%%%%%%%%%%%%%%%%%%%%% 源代码 %%%%%%%%%%%%%%%%%%%%%
 \lstset{
