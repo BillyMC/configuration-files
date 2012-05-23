@@ -63,11 +63,13 @@
 \titlecontents{subsection}[22pt]{\zihao{-4}\songti}{\contentspush{\thecontentslabel\quad}}{}{\titlerule*[0.3pc]{$\cdot$}\contentspage}
 \titlecontents{subsubsection}[3em]{\zihao{-4}\songti}{\contentspush{\thecontentslabel\quad}}{}{\titlerule*[0.3pc]{$\cdot$}\contentspage}
 
-%%%% 页脚页眉页码
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[C]{\songti\zihao{-5}北京邮电大学本科毕业设计（论文）}
-\fancyfoot[C]{\zihao{-5}\thepage}
+%%%%%%%%%%%%%%%%%% 页脚页眉页码 %%%%%%%%%%%%%%%%%%%%%%%%
+\fancypagestyle{myfancy}{
+  \fancyhf{}
+  \fancyhead[C]{\songti\zihao{-5}北京邮电大学本科毕业设计（论文）}
+  \fancyfoot[C]{\zihao{-5}\thepage}
+  \renewcommand{\headrulewidth}{0.5pt}
+}
 
 %% 定义 plain style 样式
 \fancypagestyle{plain}{
@@ -115,7 +117,32 @@
 
 %%%%%%%%%%%%%%%%%%%%%%% 列表 %%%%%%%%%%%%%%%%%%%%%%%
 % \setlength{\itemsep}{0pt}
+\newlength{\hintscolumnwidth}
+\newlength{\separatorcolumnwidth}
+\setlength{\separatorcolumnwidth}{0.2\textwidth}
+\setlength{\hintscolumnwidth}{0.1\textwidth}
+\newlength{\maincolumnwidth}
+\setlength{\maincolumnwidth}{0.8\textwidth}
+% usage (inside section): \cvline{leftmark}{text}
+\newcommand*{\cvline}[4]{%
+  \if@firstcvline%
+    \@firstcvlinefalse%
+    \\[-1em]% ugly hack to remove spaces before the first line
+  \else%
+  \\\fi%
+  \setlength{\hintscolumnwidth}{#1\textwidth}
+  \setlength{\maincolumnwidth}{#2\textwidth}
+  \begin{minipage}[t]{\hintscolumnwidth}\raggedleft{#3}\end{minipage} \quad \begin{minipage}[t]{\maincolumnwidth}#4\end{minipage}}
+%  #1&\framebox{\begin{minipage}[t]{\maincolumnwidth}#2\end{minipage}}}
+%  \begin{minipage}[t]{\hintscolumnwidth}\raggedleft\hintstyle{#1}\end{minipage}&\begin{minipage}[t]{\maincolumnwidth}#2\end{minipage}}
 
+% usage (inside section): \cvitem{leftmark}{text}
+\newcommand*{\cvitem}[4]{%
+  \if@firstcvline
+  \else
+    \\[-1.5em]\fi
+    \cvline{#1}{#2}{#3}{#4}}
+  
 %%%%%%%%%%%%%%%%%%%%%%% 源代码 %%%%%%%%%%%%%%%%%%%%%
 \lstset{
   basicstyle=\linespread{1.0}\ttfamily\small,
