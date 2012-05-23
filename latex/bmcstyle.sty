@@ -120,20 +120,19 @@
 \newlength{\maincolumnwidth}
 \newcommand*{\cvline}[4]{%
   \if@firstcvline%
-    \@firstcvlinefalse%
-    \\[-1em]% 
+  \@firstcvlinefalse%
   \else%
-  \\\fi%
+  \fi%
   \setlength{\hintscolumnwidth}{#1\textwidth}
   \setlength{\maincolumnwidth}{#2\textwidth}
-  \begin{minipage}[t]{\hintscolumnwidth}\raggedleft{#3}\end{minipage} \quad \begin{minipage}[t]{\maincolumnwidth}#4\end{minipage}}
+  \begin{minipage}[t]{\hintscolumnwidth}\raggedleft{#3}\end{minipage} \quad \begin{minipage}[t]{\maincolumnwidth}#4\\[-0.7em]\end{minipage}}
 
 %% 用法：\cvitem{左宽度}{右宽度}{左栏}{右栏}
 \newcommand*{\cvitem}[4]{%
   \if@firstcvline%
   \else%
-    \\[-1.5em]\fi%
-    \cvline{#1}{#2}{#3}{#4}}
+  \\\fi%
+  \cvline{#1}{#2}{#3}{#4}}
   
 %%%%%%%%%%%%%%%%%%%%%%% 源代码 %%%%%%%%%%%%%%%%%%%%%
 \lstset{
