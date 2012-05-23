@@ -116,31 +116,23 @@
 {\arabic{chapter}-\arabic{equation}}
 
 %%%%%%%%%%%%%%%%%%%%%%% 列表 %%%%%%%%%%%%%%%%%%%%%%%
-% \setlength{\itemsep}{0pt}
 \newlength{\hintscolumnwidth}
-\newlength{\separatorcolumnwidth}
-\setlength{\separatorcolumnwidth}{0.2\textwidth}
-\setlength{\hintscolumnwidth}{0.1\textwidth}
 \newlength{\maincolumnwidth}
-\setlength{\maincolumnwidth}{0.8\textwidth}
-% usage (inside section): \cvline{leftmark}{text}
 \newcommand*{\cvline}[4]{%
   \if@firstcvline%
     \@firstcvlinefalse%
-    \\[-1em]% ugly hack to remove spaces before the first line
+    \\[-1em]% 
   \else%
   \\\fi%
   \setlength{\hintscolumnwidth}{#1\textwidth}
   \setlength{\maincolumnwidth}{#2\textwidth}
   \begin{minipage}[t]{\hintscolumnwidth}\raggedleft{#3}\end{minipage} \quad \begin{minipage}[t]{\maincolumnwidth}#4\end{minipage}}
-%  #1&\framebox{\begin{minipage}[t]{\maincolumnwidth}#2\end{minipage}}}
-%  \begin{minipage}[t]{\hintscolumnwidth}\raggedleft\hintstyle{#1}\end{minipage}&\begin{minipage}[t]{\maincolumnwidth}#2\end{minipage}}
 
-% usage (inside section): \cvitem{leftmark}{text}
+%% 用法：\cvitem{左宽度}{右宽度}{左栏}{右栏}
 \newcommand*{\cvitem}[4]{%
-  \if@firstcvline
-  \else
-    \\[-1.5em]\fi
+  \if@firstcvline%
+  \else%
+    \\[-1.5em]\fi%
     \cvline{#1}{#2}{#3}{#4}}
   
 %%%%%%%%%%%%%%%%%%%%%%% 源代码 %%%%%%%%%%%%%%%%%%%%%
