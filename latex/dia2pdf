@@ -1,0 +1,11 @@
+#!/bin/bash
+## 将 dia 文件转换为 pdf 文件，矢量
+## 用法：dia2pdf filename (不需要加.dia后缀)
+if [ $# -ne 0 ]; then
+name=$1
+else
+name=tmp
+fi
+dia -e TMPFILE -t eps $name.dia
+ps2pdf -dEPSCrop TMPFILE $name.pdf
+rm TMPFILE
