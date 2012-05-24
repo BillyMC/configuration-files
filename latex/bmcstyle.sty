@@ -9,7 +9,6 @@
 
 \usepackage{ctex}  %% 中文宏包
 \usepackage{xCJKnumb}  %% 中文数字宏包，用法 \xCJKnumber{数字}
-\usepackage{caption} % 标题宏包
 %\usepackage{caption2}
 \usepackage{fancyhdr} % 页脚页眉
 % \usepackage{amsthm} % 数学
@@ -18,6 +17,7 @@
 \usepackage{float} % 浮动体
 \usepackage[unicode=true,colorlinks=no,pdfborder=no]{hyperref} %% 书签
 \usepackage{titletoc} %% 目录
+\usepackage{caption} % 标题宏包
 \usepackage{titlesec} %% 标题
 \usepackage{graphicx} %% 插图
 \usepackage{longtable} %% 长表格
@@ -35,8 +35,9 @@
 \setlength{\marginparsep}{0cm} %% 边注间最短距离
 \setlength{\marginparwidth}{0cm} %% 边注宽度
 \setlength{\textwidth}{16cm} %% 版心宽度
-\setlength{\topmargin}{1.0cm} %% 页眉与水平基准线距离
-\setlength{\headsep}{1.5cm} %% 页眉与版心距离
+\setlength{\topmargin}{0cm} %% 页眉与水平基准线距离
+\setlength{\headheight}{1.5cm}
+\setlength{\headsep}{1.0cm} %% 页眉与版心距离
 \setlength{\textheight}{24.7cm} %% 版心高度
 \setlength{\footskip}{1.5cm} %% 版心最后一行文本基线与页脚基线距离
 
@@ -50,11 +51,11 @@
 \titleformat{\chapter}{\centering\bf\zihao{3}\heiti}{第\chinese{chapter}章}{1em}{}
 \titlespacing*{\chapter}{0em}{-24pt}{2em}[0pt]
 \titleformat{\section}{\bf\zihao{4}\heiti}{\thesection}{1em}{}
-\titlespacing*{\section}{0em}{1em}{0em}[0pt]
+\titlespacing*{\section}{0em}{1em}{0.5em}[0pt]
 \titleformat{\subsection}{\bf\zihao{-4}\heiti}{\thesubsection}{1em}{}
-\titlespacing*{\subsection}{2em}{1em}{0em}[0pt]
-\titleformat{\subsubsection}{\bf\zihao{-4}\heiti}{\thesubsection}{1em}{}
-\titlespacing*{\subsubsection}{2em}{0em}{0em}[0pt]
+\titlespacing*{\subsection}{2em}{1em}{0.5em}[0pt]
+\titleformat{\subsubsection}{\bf\zihao{-4}\heiti}{\thesubsubsection}{1em}{}
+\titlespacing*{\subsubsection}{2em}{1em}{0.5em}[0pt]
 %%%% 目录设置
 \renewcommand{\contentsname}{\zihao{3}目\hspace{2em}录\vspace{40pt}}
 % \titlecontents{chapter}[4em]{\zihao{-4}\heiti}{\contentslabel{4em}}{}{\titlerule*[0.3pc]{$\cdot$}\bf\contentspage}
@@ -166,6 +167,10 @@
 \makeatother
 
 % %%%% 正文
+% \frenchspacing
+% \widowpenalty=10000
+
+% \setlength\parskip{6pt}
 \linespread{1.2} %% 1.2 倍行距
 \setmainfont{Times New Roman}
 %% \setCJKmainfont{SimSun}
