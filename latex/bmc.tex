@@ -1,23 +1,27 @@
-\documentclass[12pt,openany]{book}
+\documentclass[12pt]{book}
 \usepackage{bmcstyle}
-\begin{document}
 
+\begin{document}
 %%%%%%%%%%%%%%%%%%%%%% 标题页 %%%%%%%%%%%%%%%
+\pdfbookmark[0]{标题页}{bm:titlepage}
 \include{titlepage}
 % \frontmatter
 %%%%%%%%%%%%%%%%%%%%%% 声明 %%%%%%%%%%%%%%%%%
+\pdfbookmark[0]{声明}{bm:announce}
 \pagestyle{empty}
 \include{announce} %% 声明
 
 %%%%%%%%%%%%%%%%%%%%% 摘要 %%%%%%%%%%%%%%%%%
-\chapter*{摘\quad 要}
-\thispagestyle{empty}
-摘要内容
+\pdfbookmark[0]{摘要}{bm:abstractcn}
+\input{abstract}
+\pdfbookmark[0]{ABSTRACT}{bm:abstracten}
+\input{abstracten}
 
 %%%%%%%%%%%%%%%%%%%%%% 目录 %%%%%%%%%%%%%%%%%
 \frontmatter
 \pagestyle{plain}
 \pagenumbering{Roman}
+\pdfbookmark[0]{目录}{tfcontents}
 \tableofcontents
 
 
@@ -28,6 +32,7 @@
 \include{main}  %% 正文
 \include{reference} %% 参考文献
 \include{thanks} %% 致谢
+
 \end{document}
 
 %%% Local Variables: 

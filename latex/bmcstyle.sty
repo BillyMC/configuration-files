@@ -15,7 +15,7 @@
 \usepackage{mathtools} %% 定义数学公式格式
 \usepackage{ulem} % 删除线 ?
 \usepackage{float} % 浮动体
-\usepackage[unicode=true,colorlinks=no,pdfborder=no]{hyperref} %% 书签
+\usepackage[unicode=true,colorlinks,linkcolor=black,pdfborder=no]{hyperref} %% 书签
 \usepackage{titletoc} %% 目录
 \usepackage{caption} % 标题宏包
 \usepackage{titlesec} %% 标题
@@ -26,7 +26,9 @@
 \usepackage{paralist} %% 列表
 %% \usepackage[super]{cite} %% 参考文献
 \usepackage{overpic}
-
+\usepackage{times}
+\usepackage{array}
+\usepackage{subfig} %% 并排插图
 
 %%%% 版面设计
 \setlength{\paperwidth}{21cm} %% 页宽
@@ -63,7 +65,7 @@
 % \titlecontents{chapter}[4em]{\zihao{-4}\heiti}{\contentslabel{4em}}{}{\titlerule*[0.3pc]{$\cdot$}\bf\contentspage}
 \titlecontents{chapter}[0em]{\zihao{-4}\heiti}{\contentspush{第\xCJKnumber{\thecontentslabel}章\quad}}{}{\titlerule*[0.3pc]{$\cdot$}\bf\contentspage}
 \titlecontents{section}[1em]{\zihao{-4}\songti}{\contentspush{\thecontentslabel\quad}}{}{\titlerule*[0.3pc]{$\cdot$}\contentspage}
-\titlecontents{subsection}[22pt]{\zihao{-4}\songti}{\contentspush{\thecontentslabel\quad}}{}{\titlerule*[0.3pc]{$\cdot$}\contentspage}
+\titlecontents{subsection}[21pt]{\zihao{-4}\songti}{\contentspush{\thecontentslabel\quad}}{}{\titlerule*[0.3pc]{$\cdot$}\contentspage}
 \titlecontents{subsubsection}[3em]{\zihao{-4}\songti}{\contentspush{\thecontentslabel\quad}}{}{\titlerule*[0.3pc]{$\cdot$}\contentspage}
 
 %%%%%%%%%%%%%%%%%% 页脚页眉页码 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -92,7 +94,7 @@
 \makeatother
 
 \floatstyle{simplerule} % 浮动体使用样式
-\newfloat{exam}{htb}{loe}[section]
+\newfloat{exam}{htpb}{loe}[section]
 % \floatname{example}{\examplename}
 \floatname{exam}{例 }
 \captionsetup[exam]{justification=raggedright,singlelinecheck=false,labelsep=quad,labelfont=bf}
@@ -104,6 +106,10 @@
 \captionsetup[table]{labelsep=quad,font=kai,format=hang}
 \renewcommand{\thetable}%
 {\arabic{chapter}-\arabic{table}}
+
+\captionsetup[subfigure]{labelsep=quad,font=kai,format=hang}
+
+\newcommand{\bb}[2]{\raisebox{#1}[0pt][0pt]{\shortstack{#2}}}
 
 %%%% 插图标题
 \renewcommand{\figurename}{图}
@@ -128,7 +134,7 @@
   \fi%
   \setlength{\hintscolumnwidth}{#1\textwidth}
   \setlength{\maincolumnwidth}{#2\textwidth}
-  \begin{minipage}[t]{\hintscolumnwidth}\raggedleft{#3}\end{minipage} \quad \begin{minipage}[t]{\maincolumnwidth}#4\\[-0.7em]\end{minipage}}
+  \begin{minipage}[t]{\hintscolumnwidth}\raggedleft{#3}\end{minipage} \quad \begin{minipage}[t]{\maincolumnwidth}#4\\[-0.5em]\end{minipage}}
 
 %% 用法：\cvitem{左宽度}{右宽度}{左栏}{右栏}
 \newcommand*{\cvitem}[4]{%
@@ -175,4 +181,5 @@
 % \setlength\parskip{6pt}
 \linespread{1.2} %% 1.2 倍行距
 \setmainfont{Times New Roman}
-%% \setCJKmainfont{SimSun}
+
+
