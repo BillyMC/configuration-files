@@ -5,4 +5,4 @@ p. *bmc.tex* 给出了一个示例，供参考
 
 p. 需要使用 *xelatex* 命令编译 
 
-<h2>请参考 bmc.tex 文件</h2>
+<h2>请参考 bmc.tex 文件。</h2>
