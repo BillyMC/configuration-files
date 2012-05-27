@@ -11,11 +11,12 @@
 \usepackage{xCJKnumb}  %% 中文数字宏包，用法 \xCJKnumber{数字}
 %\usepackage{caption2}
 \usepackage{fancyhdr} % 页脚页眉
-% \usepackage{amsthm} % 数学
+\usepackage{amssymb} % 数学
 \usepackage{mathtools} %% 定义数学公式格式
 \usepackage{ulem} % 删除线 ?
 \usepackage{float} % 浮动体
-\usepackage[unicode=true,colorlinks,linkcolor=black,pdfborder=no]{hyperref} %% 书签
+\usepackage[unicode=true,colorlinks,linkcolor=black,citecolor=black,pdfborder=no]{hyperref} %% 书签
+%\usepackage[hyperref]{backref}
 \usepackage{titletoc} %% 目录
 \usepackage{caption} % 标题宏包
 \usepackage{titlesec} %% 标题
@@ -29,6 +30,8 @@
 \usepackage{times}
 \usepackage{array}
 \usepackage{subfig} %% 并排插图
+\usepackage{kmath}  %% 数学字体
+
 
 %%%% 版面设计
 \setlength{\paperwidth}{21cm} %% 页宽
@@ -66,7 +69,7 @@
 \titlecontents{chapter}[0em]{\zihao{-4}\heiti}{\contentspush{第\xCJKnumber{\thecontentslabel}章\quad}}{}{\titlerule*[0.3pc]{$\cdot$}\bf\contentspage}
 \titlecontents{section}[1em]{\zihao{-4}\songti}{\contentspush{\thecontentslabel\quad}}{}{\titlerule*[0.3pc]{$\cdot$}\contentspage}
 \titlecontents{subsection}[21pt]{\zihao{-4}\songti}{\contentspush{\thecontentslabel\quad}}{}{\titlerule*[0.3pc]{$\cdot$}\contentspage}
-\titlecontents{subsubsection}[3em]{\zihao{-4}\songti}{\contentspush{\thecontentslabel\quad}}{}{\titlerule*[0.3pc]{$\cdot$}\contentspage}
+\titlecontents{subsubsection}[30pt]{\zihao{-4}\songti}{\contentspush{\thecontentslabel\quad}}{}{\titlerule*[0.3pc]{$\cdot$}\contentspage}
 
 %%%%%%%%%%%%%%%%%% 页脚页眉页码 %%%%%%%%%%%%%%%%%%%%%%%%
 \fancypagestyle{myfancy}{
